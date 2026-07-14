@@ -14,6 +14,14 @@ human logic:
 establish variable for human response 
 create function getHumanChoice that: 
     prompts the user to enter 
+
+
+
+IN PLAYGAME 
+
+play game 
+    before every round, get the values of computerChoice & humanChoice
+    run the playround function
 */
 
 const choiceList = ["rock", "paper", "scissors"]
@@ -33,27 +41,31 @@ function getHumanChoice() {
     return humanChoice
 }
 
-function playRound(humanChoice, computerChoice) { 
-    const human = humanChoice.toLowerCase()
 
-    if ((human === "rock" && computerChoice === "scissors") || (human === "paper" && computerChoice === "rock") || (human === "scissors" && computerChoice === "paper")) {
+function playGame() {
+    function playRound(humanChoice, computerChoice) { 
+        const human = humanChoice.toLowerCase()
+
+        if ((human === "rock" && computerChoice === "scissors") || (human === "paper" && computerChoice === "rock") || (human === "scissors" && computerChoice === "paper")) {
         console.log(`You Win! ${human} Beats ${computerChoice}`);
         ++humanScore;
         console.log(humanScore);
-    } else if (human === computerChoice) { 
+        } else if (human === computerChoice) { 
         console.log(`A Tie! You both picked ${human}`)
-    } else { 
+        } else { 
         console.log(`You Lose! ${computerChoice} Beats ${human}`)
         ++computerScore
         console.log(computerScore)
+        }
     }
-
-
+    for (let i=0; i<5; i++) { 
+        const computerSelection = getComputerChoice()
+        const humanSelection = getHumanChoice()
+        playRound(humanSelection, computerSelection)
+    }
 }
 
 
-const computerSelection = getComputerChoice()
-const humanSelection = getHumanChoice()
+playGame()
 
-playRound(humanSelection, computerSelection)
 
