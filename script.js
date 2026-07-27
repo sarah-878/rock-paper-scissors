@@ -45,9 +45,9 @@ function playRound(event) {
     computerPlayed.textContent = `Computer Played: ${computerSelection}`
     scoreRound(humanSelection, computerSelection)
     if (computerScore === 5) {
-        final.textContent = 'The computer wins the game!!'
+        final.textContent = 'The computer wins the game!! Refresh to Restart'
     } else if (humanScore === 5) { 
-        final.textContent = 'You win the game!!'
+        final.textContent = 'You win the game!! Refresh to Restart'
         
     }
 }
