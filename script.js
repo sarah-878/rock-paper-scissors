@@ -12,7 +12,7 @@ function getComputerChoice() {
     return computerChoice
 }
 
-function playRound(humanChoice, computerChoice) { 
+function scoreRound(humanChoice, computerChoice) { 
     if ((humanChoice === "rock" && computerChoice === "scissors") || (humanChoice === "paper" && computerChoice === "rock") || (humanChoice === "scissors" && computerChoice === "paper")) {
     console.log(`You Win! ${humanChoice} Beats ${computerChoice}`);
     ++humanScore;
@@ -27,15 +27,15 @@ function playRound(humanChoice, computerChoice) {
 }
 
 
-rockButton.addEventListener('click', startRound)
-paperButton.addEventListener('click', startRound)
-scissorsButton.addEventListener('click', startRound)
+rockButton.addEventListener('click', playRound)
+paperButton.addEventListener('click', playRound)
+scissorsButton.addEventListener('click', playRound)
 
 
-function startRound(event) {
+function playRound(event) {
     const humanSelection = event.target.id
     const computerSelection = getComputerChoice()
-    playRound(humanSelection, computerSelection)
+    scoreRound(humanSelection, computerSelection)
 }
 
 
