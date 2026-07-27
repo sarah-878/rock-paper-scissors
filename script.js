@@ -2,6 +2,11 @@ const choiceList = ["rock", "paper", "scissors"]
 const rockButton = document.querySelector('#rock')
 const paperButton = document.querySelector('#paper')
 const scissorsButton = document.querySelector('#scissors')
+const humanPlayed = document.querySelector('.human-play')
+const computerPlayed = document.querySelector('.computer-play')
+const result = document.querySelector('.result')
+const humanScoreText = document.querySelector('.human-score')
+const computerScoreText = document.querySelector('.computer-score')
 let humanScore = 0 
 let computerScore = 0
 
